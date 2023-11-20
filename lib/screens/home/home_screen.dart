@@ -20,19 +20,26 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: 'Ping Pong'),
       bottomNavigationBar: CustomNavBar(),
-      body: Container(
-        child: CarouselSlider(
-          options: CarouselOptions(
-            aspectRatio: 2.5,
-            viewportFraction: 0.9,
-            enlargeCenterPage: true,
-            enlargeStrategy: CenterPageEnlargeStrategy.height,
+      body: Column(
+        children: [
+          Container(
+            child: CarouselSlider(
+              options: CarouselOptions(
+                aspectRatio: 2.5,
+                viewportFraction: 0.9,
+                enlargeCenterPage: true,
+                enlargeStrategy: CenterPageEnlargeStrategy.height,
+              ),
+              items: Category.categories
+                  .map((category) => HereCarouselCard(category: category))
+                  .toList(),
+            ),
           ),
-          items: Category.categories
-              .map((category) => HereCarouselCard(category: category))
-              .toList(),
-        ),
+          SectionTitle(title: 'RECOMMENDED'),
+        ],
       ),
     );
   }
 }
+
+
