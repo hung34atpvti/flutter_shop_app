@@ -13,7 +13,7 @@ class Category extends Equatable {
     Category(
       name: 'Rubbers',
       imageUrl:
-          'https://www.butterfly-global.com/en/products/item/06070_02.jpg',
+          'https://www.butterfly-global.com/en/products/item/06110_02.jpg',
     ),
     Category(
       name: 'Blades',

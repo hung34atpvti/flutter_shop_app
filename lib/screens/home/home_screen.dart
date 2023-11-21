@@ -20,33 +20,35 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: 'Ping Pong'),
       bottomNavigationBar: CustomNavBar(),
-      body: Column(
-        children: [
-          Container(
-            child: CarouselSlider(
-              options: CarouselOptions(
-                aspectRatio: 2.5,
-                viewportFraction: 0.9,
-                enlargeCenterPage: true,
-                enlargeStrategy: CenterPageEnlargeStrategy.height,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  aspectRatio: 1.5,
+                  viewportFraction: 0.9,
+                  enlargeCenterPage: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                ),
+                items: Category.categories
+                    .map((category) => HereCarouselCard(category: category))
+                    .toList(),
               ),
-              items: Category.categories
-                  .map((category) => HereCarouselCard(category: category))
+            ),
+            SectionTitle(title: 'RECOMMENDED'),
+            ProductCarousel(
+              products: Product.products
+                  .where((product) => product.isRecommended)
                   .toList(),
             ),
-          ),
-          SectionTitle(title: 'RECOMMENDED'),
-          ProductCarousel(
-            products: Product.products
-                .where((product) => product.isRecommended)
-                .toList(),
-          ),
-          SectionTitle(title: 'MOST POPULAR'),
-          ProductCarousel(
-            products:
-                Product.products.where((product) => product.isPopular).toList(),
-          ),
-        ],
+            SectionTitle(title: 'MOST POPULAR'),
+            ProductCarousel(
+              products:
+                  Product.products.where((product) => product.isPopular).toList(),
+            ),
+          ],
+        ),
       ),
     );
   }
