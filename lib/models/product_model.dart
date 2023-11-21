@@ -27,5 +27,46 @@ class Product extends Equatable {
         isPopular,
       ];
 
-  static List<Product> products = [];
+  static List<Product> products = [
+    Product(
+      name: 'Timo Boll ALC',
+      category: 'Blades',
+      imageUrl: 'https://www.butterfly-global.com/en/products/item/35861_01.jpg',
+      price: 3500000,
+      isRecommended: true,
+      isPopular: true,
+    ),
+    Product(
+      name: 'Harimoto Innerforce ALC',
+      category: 'Blades',
+      imageUrl: 'https://www.butterfly-global.com/en/products/item/36991_01.jpg',
+      price: 3500000,
+      isRecommended: false,
+      isPopular: false,
+    ),
+    Product(
+      name: 'Tenergy 05',
+      category: 'Rubbers',
+      imageUrl: 'https://www.butterfly-global.com/en/products/item/05800_03.jpg',
+      price: 1500000,
+      isRecommended: true,
+      isPopular: true,
+    ),
+    Product(
+      name: 'Dignics 09C',
+      category: 'Rubbers',
+      imageUrl: 'https://www.butterfly-global.com/en/products/item/06070_03.jpg',
+      price: 1700000,
+      isRecommended: true,
+      isPopular: false,
+    ),
+    Product(
+      name: 'Rozena',
+      category: 'Rubbers',
+      imageUrl: 'https://www.butterfly-global.com/en/products/item/06020_03.jpg',
+      price: 700000,
+      isRecommended: true,
+      isPopular: false,
+    ),
+  ];
 }

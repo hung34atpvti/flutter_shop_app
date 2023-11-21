@@ -21,7 +21,7 @@ TextTheme textTheme() {
     titleLarge: TextStyle(
         color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold),
     titleMedium: TextStyle(
-        color: Colors.black, fontSize: 34, fontWeight: FontWeight.normal),
+        color: Colors.black, fontSize: 14, fontWeight: FontWeight.normal),
     bodyMedium: TextStyle(
         color: Colors.black, fontSize: 12, fontWeight: FontWeight.normal),
     bodySmall: TextStyle(

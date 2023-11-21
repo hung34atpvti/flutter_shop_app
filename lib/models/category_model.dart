@@ -13,27 +13,27 @@ class Category extends Equatable {
     Category(
       name: 'Rubbers',
       imageUrl:
-          'lib/public/assets/categories/rubbers.jpg',
+          'https://www.butterfly-global.com/en/products/item/06070_02.jpg',
     ),
     Category(
       name: 'Blades',
       imageUrl:
-          'lib/public/assets/categories/blades.jpg',
+          'https://www.butterfly-global.com/en/products/item/35861_01.jpg',
     ),
     Category(
       name: 'Care',
       imageUrl:
-          'lib/public/assets/categories/care.jpg',
+          'https://www.butterfly-global.com/en/products/item/70490_01.jpg',
     ),
     Category(
       name: 'Shoes',
       imageUrl:
-          'lib/public/assets/categories/shoes.jpg',
+          'https://www.butterfly-global.com/en/products/item/93620_02.jpg',
     ),
     Category(
       name: 'Balls',
       imageUrl:
-          'lib/public/assets/categories/balls.jpg',
+          'https://www.butterfly-global.com/en/products/item/95840_03.jpg',
     ),
   ];
 }
