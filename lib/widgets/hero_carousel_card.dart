@@ -2,21 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shop_app/models/models.dart';
 
 class HereCarouselCard extends StatelessWidget {
-  final Category category;
+  final Category? category;
+  final Product? product;
 
   const HereCarouselCard({
-    required this.category,
+    this.category,
+    this.product,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(
-          context,
-          '/catalog',
-          arguments: category,
-        );
+        if (this.product == null) {
+          Navigator.pushNamed(
+            context,
+            '/catalog',
+            arguments: category,
+          );
+        }
       },
       child: Container(
         margin: EdgeInsets.symmetric(
@@ -28,7 +32,7 @@ class HereCarouselCard extends StatelessWidget {
             child: Stack(
               children: <Widget>[
                 Image.network(
-                  category.imageUrl,
+                  product == null ? category!.imageUrl : product!.imageUrl,
                   fit: BoxFit.cover,
                   width: 1000.0,
                 ),
@@ -50,7 +54,7 @@ class HereCarouselCard extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                     child: Text(
-                      category.name,
+                      product == null ? category!.name : '',
                       style:
                           Theme.of(context).textTheme.headlineMedium!.copyWith(
                                 color: Colors.white,
